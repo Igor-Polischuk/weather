@@ -1,0 +1,233 @@
+.mobile{
+    width: 100%;
+    background: $main-color;
+
+    .container{
+        min-height: 100vh;
+
+    }
+
+    &__search{
+        margin-bottom: 30px;
+
+        & input{
+            background-image: url('../assets/img/search.png');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            width: 100%;
+            padding: 10px 40px;
+            border: 0;
+            border-bottom: 1px solid black;
+            background-color: rgba(0, 0, 0, 0);
+        }
+    }
+
+    &__cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 90vh;
+        gap: 30px;
+        position: relative;
+    }
+
+    &__card{
+        list-style: none;
+        min-height: 120px;
+        display: flex;
+
+        &.td{
+            background-color: $secondary-color;
+        }
+        &.nd{
+            background-color: $card-color;
+        }
+    }
+}
+
+.mobile__card__preview{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    padding: 10px;
+    padding-right: 15px;
+
+    &__day{
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    &__info{
+        display: flex;
+        align-items: center;    
+        gap: 20px;
+
+        div p{
+            text-align: right;
+
+            &:nth-child(1){
+                font-size: 36px;
+            }
+            &:nth-child(2){
+                font-size: 14px;
+                position: relative;
+                bottom: 0;
+                display: inline;
+            }
+        }
+    }
+
+    .preview__ico{
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
+
+
+.mobile-weather{
+    width: 100%;
+    padding: 30px 10px;
+    height: 100%;
+    color: $white;
+    transform: translateY(-1000px);
+
+    button{
+        width: 100%;
+        min-height: 50px;
+        padding: 20px;
+        font-size: 24px;
+        border: 0;
+        outline: none;
+        background-color: $main-color;
+        margin-top: 20px;
+    }
+    
+    .main-info{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        font-size: 16px;
+        margin-bottom: 20px;
+
+        .location{
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .date{
+            margin: 10px 0;
+            font-size: 26px;
+        }
+
+        .temp{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+
+            .weather__descr{
+                display: flex;
+                gap: 10px;
+
+                .wm_ico{
+                    max-width: 20px;
+                    max-height: 20px;
+                }
+            }
+
+            .current-temp{
+                font-size: 56px;
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .additional-info{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        & p{
+            padding: 10px 5px;
+        }
+    }
+
+    .hourly{
+        margin-top: 30px;
+        align-self: flex-end;
+        overflow: auto;
+        
+        &__temp{
+            display: flex;
+            justify-content: space-between;
+
+            .temp-in-hour{
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+
+                .hourly-ico{
+                    max-width: 60px;
+                    max-height: 60px;
+                    margin-bottom: 10px;
+                }
+
+                .temp{
+                    font-size: 21px;
+                    font-weight: bold;
+                }
+
+                .time{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__rain{
+            display: flex;
+            justify-content: space-between;
+
+            .precipitation-in-hour{
+                padding: 10px 29px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+
+                .precipitation{
+                    font-size: 21px;
+                    font-weight: bold;
+                }
+
+                .time{
+                    font-size: 18px;
+                }
+
+                .precipitation-graf{
+                    width: 40px;
+                    height: 90px;
+                    position: relative;
+                    background-color: $secondary-color;
+                    margin-bottom: 10px;
+                    outline: solid #21E3FE;
+    
+                    &__line{
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        height: 22%;
+                        background-color: #21E3FE;
+                    }
+                }
+            }
+
+            
+        }
+
+    }
+}
