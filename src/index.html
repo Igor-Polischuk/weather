@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <div class="error">
+        <p>Something was wrong. Please try later...</p>
+        <img src="./assetsForHtml/img/error.jpg" alt="ERRROR">
+    </div>
     <div class="loader">
         <div class="preloader" style="opacity: 1; ">
             <svg version="1.1" id="sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -89,8 +93,9 @@
             <div class="container">
                 <header class="header">
                     <div class="header__input">
-                        <p class="header__input-text">Weather right now in: </p>
+                        <label class="header__input-text" for="search-city">Weather right now in: </label>
                         <input id="search-city" maxlength="30" type="text">
+                        <ul class="tips"></ul>
                     </div>
                     <div class="header__date">
                         <span class="header__mounth">june</span>
@@ -218,7 +223,7 @@
                                 <div class="weather__max-min">
                                     <p class="weather__max">Max: <span class="max">21</span> °C</p>
                                     <p class="weather__min">Min: <span class="min">16</span> °C</p>
-                                    <p class="weather__feel">Feels like <span class="min">20</span>°</p>
+                                    <p class="weather__feel">Feels like <span class="fells">20</span>°</p>
                                 </div>
                                 <!-- <p class="weather__adv">Today you can eat a ice cream</p> -->
                             </div>
@@ -235,7 +240,7 @@
                             <div class="day__main-info">
                                 <p>Max temp: <span class="max"></span> °C</p>
                                 <p>Min temp: <span class="min"></span> °C</p>
-                                <p>Precipitation: <span class="pop">12</span>%</p>
+                                <!-- <p>Precipitation: <span class="pop">12</span>%</p> -->
                             </div>
                             <iframe src="svg/b_1_partly_cloudy.svg" frameborder="0" class="day__ico "
                                 scrolling="no"></iframe>
@@ -250,7 +255,7 @@
                             <div class="day__main-info">
                                 <p>Max temp: <span class="max"></span> °C</p>
                                 <p>Min temp: <span class="min"></span> °C</p>
-                                <p>Precipitation: <span class="pop">12</span>%</p>
+                                <!-- <p>Precipitation: <span class="pop">12</span>%</p> -->
                             </div>
                             <iframe src="svg/b_1_partly_cloudy.svg" frameborder="0" class="day__ico "
                                 scrolling="no"></iframe>
@@ -265,7 +270,7 @@
                             <div class="day__main-info">
                                 <p>Max temp: <span class="max"></span> °C</p>
                                 <p>Min temp: <span class="min"></span> °C</p>
-                                <p>Precipitation: <span class="pop">12</span>%</p>
+                                <!-- <p>Precipitation: <span class="pop">12</span>%</p> -->
                             </div>
                             <iframe src="svg/b_1_partly_cloudy.svg" frameborder="0" class="day__ico "
                                 scrolling="no"></iframe>
@@ -280,7 +285,7 @@
                             <div class="day__main-info">
                                 <p>Max temp: <span class="max"></span> °C</p>
                                 <p>Min temp: <span class="min"></span> °C</p>
-                                <p>Precipitation: <span class="pop">12</span>%</p>
+                                <!-- <p>Precipitation: <span class="pop">12</span>%</p> -->
                             </div>
                             <iframe src="svg/b_1_partly_cloudy.svg" frameborder="0" class="day__ico "
                                 scrolling="no"></iframe>
@@ -293,6 +298,8 @@
             <div class="container">
                 <div class="mobile__search">
                     <input type="text">
+                    <ul class="tips tips__mobile">
+                    </ul>
                 </div>
                 <ul class="mobile__cards">
                     <li class="mobile__card  td" data-day='0'>
@@ -308,6 +315,7 @@
                         </div>
                     </li>
                     <li class="mobile__card nd" data-day='1'>
+                        
                         <div class="mobile__card__preview">
                             <p class="mobile__card__preview__day mobile__day-name">Today</p>
                             <div class="mobile__card__preview__info">
@@ -317,6 +325,7 @@
                                 </div>
                                 <iframe src="./svg/b_2_cloudy.svg" class="preview__ico ico" frameborder="0"></iframe>
                             </div>
+                            
                         </div>
                     </li>
                     <li class="mobile__card nd" data-day='2'>

@@ -1,0 +1,27 @@
+.tips{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 75%;
+    background-color: $main-color;
+    list-style: none;
+    z-index: 1000;
+  
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid darken($main-color, 2%);
+      cursor: pointer;
+      transition: 100ms;
+  
+      &:hover{
+        background: darken($main-color, 2%);
+      }
+    }
+  }
+  
+  .tips__mobile{
+    width: 100%;
+  }

@@ -4,6 +4,7 @@
     gap: 50px;
     width: 100%;
     min-height: 200px;
+    // overflow: hidden;
     position: relative;
     @media ($breakpoint942){
         min-height: 150px;
@@ -29,6 +30,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        line-height: 1;
         @media ($breakpoint942){
             font-size: 14px;
         }
@@ -51,6 +53,8 @@
 
     &__current {
         text-transform: capitalize;
+        display: flex;
+        flex-direction: column;
     }
 
     &__ico {

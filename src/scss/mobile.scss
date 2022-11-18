@@ -9,6 +9,7 @@
 
     &__search{
         margin-bottom: 30px;
+        position: relative;
 
         & input{
             background-image: url('../assets/img/search.png');
@@ -58,6 +59,8 @@
     &__day{
         font-size: 36px;
         font-weight: bold;
+        display: flex;
+        flex-direction: column;
     }
 
     &__info{

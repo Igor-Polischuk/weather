@@ -11,7 +11,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        index: './js/app.js',
+        index: './ts/app.ts',
     },
     devtool: isDev ? 'source-map' : 'eval',
     devServer: {
@@ -30,6 +30,7 @@ module.exports = {
         clean: true
     },
     resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
         }
@@ -48,15 +49,16 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [{
-                from: path.resolve(__dirname, 'src/assetsForHtml/img'),
-                to: path.resolve(__dirname, 'dist/assets/img'),
-                noErrorOnMissing: true
-            },
-            {
-                from: path.resolve(__dirname, 'src/svg/'),
-                to: path.resolve(__dirname, 'dist/svg/'),
-                noErrorOnMissing: true
-            }]
+                    from: path.resolve(__dirname, 'src/assetsForHtml/img'),
+                    to: path.resolve(__dirname, 'dist/assets/img'),
+                    noErrorOnMissing: true
+                },
+                {
+                    from: path.resolve(__dirname, 'src/svg/'),
+                    to: path.resolve(__dirname, 'dist/svg/'),
+                    noErrorOnMissing: true
+                }
+            ]
         }),
         new MiniCssExtractPlugin({
             filename: 'css/style.[contenthash].css'
@@ -68,15 +70,25 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.s[ac]ss/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader',
-                {
-                    loader: "postcss-loader",
-                    options: {
-                        postcssOptions: { plugins: [["autoprefixer"]],},
-                    }
-                },
-                'sass-loader'],
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    ["autoprefixer"]
+                                ],
+                            },
+                        }
+                    },
+                    'sass-loader'
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
